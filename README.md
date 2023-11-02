@@ -1,57 +1,47 @@
-The content below is an example project proposal / requirements document. Replace the text below the lines marked "__TODO__" with details specific to your project. Remove the "TODO" lines.
-
-(__TODO__: your project name)
-
-# Shoppy Shoperson 
+# FlavorDash
 
 ## Overview
 
-(__TODO__: a brief one or two paragraph, high-level description of your project)
-
-Remembering what to buy at the grocery store is waaaaay too difficult. Also, shopping for groceries when you're hungry leads to regrettable purchases. Sooo... that's where Shoppy Shoperson comes in!
-
-Shoppy Shoperson is a web app that will allow users to keep track of multiple grocery lists. Users can register and login. Once they're logged in, they can create or view their grocery list. For every list that they have, they can add items to the list or cross off items.
+FlavorDash: Where Food Meets Convenience! Connect with nearby restaurants effortlessly, track your orders in real-time, and enjoy hassle-free menu management for restaurant owners.
+With a focus on quality, convenience, and variety, FlavorDash is the ultimate destination for food lovers and local eateries, delivering delicious flavors right to your doorstep.
+As a restaurant owner, streamline incoming orders and enhance your business on our user-friendly DASHboard.
 
 
 ## Data Model
 
-(__TODO__: a description of your application's data and their relationships to each other) 
+The application will store Users, Restaurants and Food. Users can be create orders. A logged in user can also be the owner of a restaurant.
+A restaurant can have a list of Food which will be used to create a menu. This can be managed by the owner of a restaurant.
 
-The application will store Users, Lists and Items
+* A user can be a costumer making an order or the owner of a restaurant which will grant them the privellege of managing their restaurant.
+* A restaurant can have only one owner
+* A restaurant can have a list of Food items
 
-* users can have multiple lists (via references)
-* each list can have multiple items (by embedding)
-
-(__TODO__: sample documents)
 
 An Example User:
 
 ```javascript
 {
-  username: "shannonshopper",
+  username: "betterthandoordash",
   hash: // a password hash,
-  lists: // an array of references to List documents
+  owner: //boolean, set true for restaurant owners
+  restaurant: //if owner true, will reference Restaurant 
 }
 ```
 
-An Example List with Embedded Items:
+An Example Restaurant with Embedded Food Items:
 
 ```javascript
 {
-  user: // a reference to a User object
-  name: "Breakfast foods",
-  items: [
-    { name: "pancakes", quantity: "9876", checked: false},
-    { name: "ramen", quantity: "2", checked: true},
+  name: "Halal Cart 202",
+  food: [
+    { name: "Chicken Over Rice", price: "9.99", ingredients: ["chicken","rice","salad"], description:"Best halal chicken over rice in the city"},
   ],
-  createdAt: // timestamp
 }
 ```
 
 
 ## [Link to Commented First Draft Schema](db.mjs) 
 
-(__TODO__: create a first draft of your Schemas in db.mjs and link to it)
 
 ## Wireframes
 
@@ -77,37 +67,34 @@ Here's a [complex example from wikipedia](https://upload.wikimedia.org/wikipedia
 
 ## User Stories or Use Cases
 
-(__TODO__: write out how your application will be used through [user stories](http://en.wikipedia.org/wiki/User_story#Format) and / or [use cases](https://en.wikipedia.org/wiki/Use_case))
-
 1. as non-registered user, I can register a new account with the site
 2. as a user, I can log in to the site
-3. as a user, I can create a new grocery list
-4. as a user, I can view all of the grocery lists I've created in a single list
-5. as a user, I can add items to an existing grocery list
-6. as a user, I can cross off items in an existing grocery list
+3. as a user, I can browse through all the available restaurants
+4. as a user, I can place an order
+5. as an owner, I can manage my restaurant
+6. as an owner, I can add/remove food
 
 ## Research Topics
-
-(__TODO__: the research topics that you're planning on working on along with their point values... and the total points of research topics listed)
-
-* (5 points) Integrate user authentication
-    * I'm going to be using passport for user authentication
-    * And account has been made for testing; I'll email you the password
-    * see <code>cs.nyu.edu/~jversoza/ait-final/register</code> for register page
-    * see <code>cs.nyu.edu/~jversoza/ait-final/login</code> for login page
-* (4 points) Perform client side form validation using a JavaScript library
-    * see <code>cs.nyu.edu/~jversoza/ait-final/my-form</code>
-    * if you put in a number that's greater than 5, an error message will appear in the dom
-* (5 points) vue.js
-    * used vue.js as the frontend framework; it's a challenging library to learn, so I've assigned it 5 points
-
-10 points total out of 8 required points (___TODO__: addtional points will __not__ count for extra credit)
+Research topics are currently very tentative and most of these will probably change by the next milestone
+* (4-6 points) React 
+    * I'm going to research further on React to use it as a front-end library
+    * Unsure about how much I would research further into it so the points are tentative between 4-6
+*  (3 points) Configuration management
+    *dotenv
+*  (2 points) CSS Preprocessor
+    * Sass
+*  (2 points) Front-end Libraries
+    * Will include many small utilitiy libraries:
+        * Google Maps
+        * Bootstrap
+        * (maybe) P5js for animation
+=
 
 
 ## [Link to Initial Main Project File](app.mjs) 
 
-(__TODO__: create a skeleton Express application with a package.json, app.mjs, views folder, etc. ... and link to your initial app.mjs)
 
+(unchaged for now, will add references and resources as I use them for my project)
 ## Annotations / References Used
 
 (__TODO__: list any tutorials/references/etc. that you've based your code off of)
