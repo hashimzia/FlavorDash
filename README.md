@@ -45,25 +45,29 @@ An Example Restaurant with Embedded Food Items:
 
 ## Wireframes
 
-(__TODO__: wireframes for all of the pages on your site; they can be as simple as photos of drawings or you can use a tool like Balsamiq, Omnigraffle, etc.)
+/homepage - first page for any user
 
-/list/create - page for creating a new shopping list
+![homepage](documentation/homepage.jpeg)
 
-![list create](documentation/list-create.png)
+/login - old user login authentication page
 
-/list - page for showing all shopping lists
+![login](documentation/login.jpeg)
 
-![list](documentation/list.png)
+/signup - new user signup
 
-/list/slug - page for showing specific shopping list
+![signup](documentation/signup.jpeg)
 
-![list](documentation/list-slug.png)
+/restaurants - view restaurants for logged in users
+
+![browse](documentation/browse.jpeg)
+
+/order - order food from a specific restaurant
+
+![browse](documentation/order.jpeg)
 
 ## Site map
 
-(__TODO__: draw out a site map that shows how pages are related to each other)
-
-Here's a [complex example from wikipedia](https://upload.wikimedia.org/wikipedia/commons/2/20/Sitemap_google.jpg), but you can create one without the screenshots, drop shadows, etc. ... just names of pages and where they flow to.
+![sitemap](documentation/sitemap.jpeg)
 
 ## User Stories or Use Cases
 
