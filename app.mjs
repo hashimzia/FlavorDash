@@ -1,4 +1,4 @@
-// import './config.mjs';
+import './config.mjs';
 // import './db.mjs';
 import express from 'express';
 // import { mongoose } from 'mongoose';
@@ -17,4 +17,6 @@ app.get('/restaurants', (req, res) => {
     res.send("restaurants page");
 });
 
-app.listen(process.env.PORT || 3000);
+// app.listen(process.env.PORT || 3000);
+
+module.exports = app;
