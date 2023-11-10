@@ -11,7 +11,8 @@ const __dirname = path.dirname(__filename);
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
-app.use(express.static('public'));
+const publicFolder = path.join(__dirname, 'public');
+app.use(express.static(publicFolder));
 
 app.get('/', (req, res) => {
     res.render("layout");
