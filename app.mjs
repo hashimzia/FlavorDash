@@ -23,28 +23,37 @@ app.get('/', (req, res) => {
     res.render("home");
 });
 
-// app.get('/restaurants', (req, res) => {
-//     res.render("restaurants");
-// });
+app.get('/restaurants', async (req, res) => {
+    const restaurants = await Restaurant.find({});
+    console.log(restaurants);
+    res.render("restaurants", { restaurants });
+});
 
-app.get('/restaurants', (req, res) => {
-    const fakeRestaurent = {
-        name: "Hashim's Halal Cart",
+app.get('/restaurants-add', (req, res) => {
+    res.render("restaurant-add");
+});
+
+app.post('/restaurants-add', (req, res) => {
+
+    console.log(req.body);
+
+    const sampleRestaurant = new Restaurant({
+        name: req.body.name,
         food: [
             {
-                name: "Chicken Over Rice",
-                price: 9.99,
-                ingredients: ["Love"],
-                description: "Filled w love"
+                name: req.body["food-name"],
+                price: parseFloat(req.body["food-price"]),
+                ingredients: req.body["food-ingredients"].split(","),
+                description: req.body["food-description"]
             }
         ]
-    };
+    });
 
-    const sampleRestaurant = new Restaurant(fakeRestaurent);
+    // const sampleRestaurant = new Restaurant(fakeRestaurent);
     sampleRestaurant.save()
         .then(() => {
             console.log('Restaurant saved successfully');
-            res.redirect('/');
+            res.redirect('/restaurants');
             return;
         })
         .catch(err => {

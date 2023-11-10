@@ -45,3 +45,21 @@ nav a {
     margin: 20px auto;
     padding: 20px;
 }
+
+form {
+    margin-left: 20px;
+}
+
+div {
+    margin: 20px 0;
+}
+
+.restaurant {
+    border: 5px solid black;
+}
+
+.food {
+    border: 2px solid black;
+    display: inline-block;
+    margin: 10px;
+}

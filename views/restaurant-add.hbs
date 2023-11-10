@@ -1,0 +1,28 @@
+<h1>Register your restaurant!</h1>
+<h2>This page will be very different, for now its only a temporary form submission template for how things would work
+</h2>
+
+<form action="/restaurants-add" method="post">
+
+    <div>
+        <label for="name">Name of your FlavorDash restaurant:</label>
+        <input type="text" name="name">
+    </div>
+
+    <div class="food-form">
+        <h3>Food:</h3>
+        <label for="food-name">Name for food:</label>
+        <input type="text" name="food-name">
+        <br>
+        <label for="food-price">Price:</label>
+        <input type="text" name="food-price">
+        <br>
+        <label for="food-ingredients">Ingredients: (seperated by commas)</label>
+        <textarea name="food-ingredients"></textarea>
+        <br>
+        <label for="food-description">Description</label>
+        <textarea name="food-description"></textarea>
+    </div>
+    <button>submit</button>
+    {{!-- <button class="add-food" type="button">Add Food</button> --}}
+</form>
