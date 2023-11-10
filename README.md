@@ -1,5 +1,11 @@
 # FlavorDash
 
+## Milestone 2 progress notes:
+
+Reconsidering using react because I did not have enough time to implement it for this milestone
+
+For now I have implemented ESLint as part of my workflow using VSCode autoformat on save. It shows errors for eslint configurations and fixes fixable errors on save. Currently the app has a form using handlebars however this might shift to react or nextjs if I can figure out deployment through them
+
 ## Overview
 
 FlavorDash: Where Food Meets Convenience! Connect with nearby restaurants effortlessly, track your orders in real-time, and enjoy hassle-free menu management for restaurant owners.
@@ -80,6 +86,8 @@ An Example Restaurant with Embedded Food Items:
 
 ## Research Topics
 Research topics are currently very tentative and most of these will probably change by the next milestone
+
+
 * (4-6 points) React 
     * I'm going to research further on React to use it as a front-end library
     * Unsure about how much I would research further into it so the points are tentative between 4-6
@@ -92,7 +100,7 @@ Research topics are currently very tentative and most of these will probably cha
         * Google Maps
         * Bootstrap
         * (maybe) P5js for animation
-=
+* (1 point) ESLint formatter integrated with vs code, formats on save;
 
 
 ## [Link to Initial Main Project File](app.mjs) 
