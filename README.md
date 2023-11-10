@@ -6,6 +6,8 @@ Reconsidering using react because I did not have enough time to implement it for
 
 For now I have implemented ESLint as part of my workflow using VSCode autoformat on save. It shows errors for eslint configurations and fixes fixable errors on save. Currently the app has a form using handlebars however this might shift to react or nextjs if I can figure out deployment through them
 
+![eslint_on_save](documentation/eslint_on_save.gif)
+
 ## Overview
 
 FlavorDash: Where Food Meets Convenience! Connect with nearby restaurants effortlessly, track your orders in real-time, and enjoy hassle-free menu management for restaurant owners.
