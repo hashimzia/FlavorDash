@@ -1,7 +1,14 @@
 
 import './config.mjs';
 import mongoose from "mongoose";
-mongoose.connect(process.env.DSN);
+
+if (!process.env.MONGODB_URI) {
+    throw console.error("No Mongo DB");
+}
+
+mongoose.connect(process.env.MONGODB_URI);
+
+
 const User = new mongoose.Schema({
     name: String,
     hash: String,

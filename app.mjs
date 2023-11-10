@@ -1,4 +1,4 @@
-import './config.mjs';
+// import './config.mjs';
 // import './db.mjs';
 import express from 'express';
 // import { mongoose } from 'mongoose';
