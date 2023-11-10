@@ -15,7 +15,7 @@ const publicFolder = path.join(__dirname, 'public');
 app.use(express.static(publicFolder));
 
 app.get('/', (req, res) => {
-    res.render("layout");
+    res.render("home");
 });
 
 app.get('/restaurants', (req, res) => {
