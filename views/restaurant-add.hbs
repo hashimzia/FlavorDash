@@ -1,27 +1,36 @@
 <h1>Register your restaurant!</h1>
-<h2>This page will be very different, for now its only a temporary form submission template for how things would work
-</h2>
 
 <form action="/restaurants-add" method="post">
 
-    <div>
-        <label for="name">Name of your FlavorDash restaurant:</label>
-        <input type="text" name="name">
+    <div class="row">
+        <label for="name" class="col-sm-3 col-form-label">Name of your FlavorDash restaurant:</label>
+        <div class="col-sm-9">
+            <input type="text" name="name" class="form-control">
+        </div>
     </div>
 
     <div class="food-form">
         <h3>Food:</h3>
-        <label for="food-name">Name for food:</label>
-        <input type="text" name="food-name">
-        <br>
-        <label for="food-price">Price:</label>
-        <input type="text" name="food-price">
-        <br>
-        <label for="food-ingredients">Ingredients: (seperated by commas)</label>
-        <textarea name="food-ingredients"></textarea>
-        <br>
-        <label for="food-description">Description</label>
-        <textarea name="food-description"></textarea>
+        <div class="row mb-0">
+            <label for="food-name" class="col-sm-2 col-form-label">Name for food:</label>
+            <div class="col-sm-10">
+                <input type="text" name="food-name" class="form-control">
+            </div>
+        </div>
+        <div class="row mb-0">
+            <label for="food-price" class="col-sm-2 col-form-label">Price:</label>
+            <div class="col-sm-10">
+                <input type="text" name="food-price" class="form-control">
+            </div>
+        </div>
+        <div class="row mb-0">
+            <label for="food-ingredients" class="form-label">Ingredients: (seperated by commas)</label>
+            <textarea class="form-control" name="food-ingredients"></textarea>
+        </div>
+        <div class="row mb-0">
+            <label for="food-description" class="form-label">Description</label>
+            <textarea class="form-control" name="food-description"></textarea>
+        </div>
     </div>
     <button>submit</button>
     {{!-- <button class="add-food" type="button">Add Food</button> --}}
