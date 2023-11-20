@@ -1,5 +1,8 @@
 # FlavorDash
-
+## Milestone 3 Progress notes:
+Incorporated bootstrap + Sass compilaion into my project. 
+Added the new form and improved the layout slightly
+Planning to use Selenium or error checking instead of React because of the timeframe limitations
 ## Milestone 2 progress notes:
 
 Reconsidering using react because I did not have enough time to implement it for this milestone
