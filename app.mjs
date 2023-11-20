@@ -13,6 +13,7 @@ const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -25,7 +26,6 @@ app.get('/', (req, res) => {
 
 app.get('/restaurants', async (req, res) => {
     const restaurants = await Restaurant.find({});
-    console.log(restaurants);
     res.render("restaurants", { restaurants });
 });
 
@@ -35,7 +35,6 @@ app.get('/restaurants-add', (req, res) => {
 
 app.post('/restaurants-add', (req, res) => {
 
-    console.log(req.body);
 
     const sampleRestaurant = new Restaurant({
         name: req.body.name,
@@ -63,6 +62,9 @@ app.post('/restaurants-add', (req, res) => {
         });
 });
 
+app.delete('/restaurants-add', async (req, res) => {
+    await Restaurant.findByIdAndDelete(req.body.id);
+});
 app.listen(process.env.PORT || 3000);
 
 // module.exports = app;

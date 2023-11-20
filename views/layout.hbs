@@ -10,24 +10,21 @@
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <img src="logo.PNG" alt="Logo">
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/restaurants-add">Add a restaurant</a></li>
-                    <li><a href="/restaurants">Order</a></li>
-                    {{!-- <li><a href="#">Contact</a></li> --}}
-                </ul>
-            </nav>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container justify-content-between">
+            <a href="#"><img src="logo.png" alt="logo" class="img-thumbnail" width="100"></a>
+            <ul class="mr-2">
+                <li><a href="/">Home</a></li>
+                <li><a href="/restaurants-add">Add a restaurant</a></li>
+                <li><a href="/restaurants">Order</a></li>
+            </ul>
         </div>
-    </header>
+    </nav>
     <div class="content">
         {{{body}}}
     </div>
+
+    <script src="restaurants.js"></script>
 </body>
 
 </html>

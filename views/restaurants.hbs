@@ -12,8 +12,8 @@
         <p>{{description}}</p>
     </div>
     {{/each}}
-    <form method="POST" action="/restaurant?_method=DELETE">
-        <button type="submit">Delete</button>
-    </form>
+    <div class="container">
+        <button type="submit" class="btn btn-danger delete-btn" id="{{_id}}">Delete</button>
+    </div>
 </div>
 {{/each}}
