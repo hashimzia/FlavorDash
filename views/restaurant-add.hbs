@@ -1,8 +1,6 @@
-<h1>Register your restaurant!</h1>
-
 <form action="/restaurants-add" method="post">
-
-    <div class="row">
+    <h1>Register your restaurant!</h1>
+    <div class="row mb-0">
         <label for="name" class="col-sm-3 col-form-label">Name of your FlavorDash restaurant:</label>
         <div class="col-sm-9">
             <input type="text" name="name" class="form-control">
@@ -32,6 +30,6 @@
             <textarea class="form-control" name="food-description"></textarea>
         </div>
     </div>
-    <button>submit</button>
+    <button class="btn btn-outline-primary">Submit</button>
     {{!-- <button class="add-food" type="button">Add Food</button> --}}
 </form>

@@ -2,11 +2,11 @@
     All restaurants show up here:
 </h1>
 {{#each restaurants}}
-<div class="restaurant">
+<div class="restaurant container">
     <h3>{{name}}</h3>
     <h4>Food available:</h4>
     {{#each food}}
-    <div class="food">
+    <div class="food container-fluid">
         <h4>{{name}}</h4>
         <p>Price:{{price}}</p>
         <p>{{description}}</p>
