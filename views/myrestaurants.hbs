@@ -16,7 +16,7 @@
     <h3>{{name}}</h3>
     <h4>Food available:</h4>
     {{#each food}}
-    <div class="food container-fluid col-sm-3 border border-primary rounded mb-3">
+    <div class="food container-fluid col-sm-3 border border-primary rounded">
         <h4>{{name}}</h4>
         <p>Price:{{price}}</p>
         <p>Ingredients: </p>
@@ -31,5 +31,8 @@
         <p>{{description}}</p>
     </div>
     {{/each}}
+    <div class="container">
+        <button type="submit" class="btn btn-danger delete-btn mb-3 mt-3" id="{{_id}}">Delete</button>
+    </div>
 </div>
 {{/each}}

@@ -24,7 +24,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const sessionOptions = {
-    secret: 'secret cookie thang (store this elsewhere!)',
+    secret: process.env.SECRET,
     resave: true,
     saveUninitialized: true,
     store: store
@@ -73,6 +73,22 @@ app.get('/restaurants', async (req, res) => {
     }
 });
 
+app.get('/myrestaurants', async (req, res) => {
+
+    if (req.user) {
+        let restaurants = await Restaurant.find({});
+        if (req.query.name) {
+            restaurants = restaurants.filter(el => el.name.toLowerCase().includes(req.query.name));
+        }
+        restaurants = restaurants.filter(el => el.owner.equals(req.user._id));
+        res.render("myrestaurants", { restaurants });
+
+    } else {
+        req.flash('error', 'You must be logged in to access this page.');
+        res.redirect('/');
+    }
+});
+
 
 app.get('/restaurants-add', (req, res) => {
     if (req.user) {
@@ -83,7 +99,17 @@ app.get('/restaurants-add', (req, res) => {
     }
 });
 
-app.post('/register', function (req, res) {
+app.post('/register', async function (req, res) {
+    const { username, password } = req.body;
+    if (!username || !password) {
+        req.flash('error', 'Please provide a username and password');
+        return res.redirect('/register');
+    }
+    const existingUser = await User.findOne({ username });
+    if (existingUser) {
+        req.flash('error', 'Username is already taken');
+        return res.redirect('/register');
+    }
     User.register(new User({ username: req.body.username }),
         req.body.password, function (err, user) {
             if (err) {
