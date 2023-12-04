@@ -77,21 +77,13 @@ body {
 
 .flash-message {
     position: fixed;
-    /* Positioning it relative to the viewport */
     top: 20px;
-    /* Distance from the top */
     right: 20px;
-    /* Distance from the right */
     z-index: 1000;
-    /* Ensures it stays on top of other elements */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* Adds some shadow for the card-like effect */
     border-radius: 5px;
-    /* Optional: Rounds the corners */
     padding: 10px 20px;
-    /* Spacing inside the message */
     max-width: 300px;
-    /* Maximum width of the message */
     display: flex;
     align-items: center;
     justify-content: space-between;
