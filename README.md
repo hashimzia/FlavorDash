@@ -92,19 +92,15 @@ An Example Restaurant with Embedded Food Items:
 ## Research Topics
 Research topics are currently very tentative and most of these will probably change by the next milestone
 
-
-* (4-6 points) React 
-    * I'm going to research further on React to use it as a front-end library
-    * Unsure about how much I would research further into it so the points are tentative between 4-6
+*  (5 points) User Authentication using Passport
+  in-progress
 *  (3 points) Configuration management
     *dotenv
 *  (2 points) CSS Preprocessor
     * Sass
 *  (2 points) Front-end Libraries
-    * Will include many small utilitiy libraries:
-        * Google Maps
         * Bootstrap
-        * (maybe) P5js for animation
+           Configured a theme + used many of the components provided by bootstrap to style with SASS
 * (1 point) ESLint formatter integrated with vs code, formats on save;
 
 
