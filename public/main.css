@@ -12019,10 +12019,6 @@ form {
   margin-left: 20px;
 }
 
-div {
-  margin: 20px 0;
-}
-
 .restaurant {
   border: 5px solid black;
 }
@@ -12031,4 +12027,21 @@ div {
   border: 2px solid black;
   display: inline-block;
   margin: 11px;
+}
+
+h1, .h1,
+h4,
+.h4,
+h3,
+.h3 {
+  display: inline;
+}
+
+h3, .h3 {
+  color: white;
+}
+
+html,
+body {
+  height: 100%;
 }
