@@ -1,35 +1,43 @@
 <form action="/restaurants-add" method="post">
-    <h1>Register your restaurant!</h1>
-    <div class="row mb-0">
-        <label for="name" class="col-sm-3 col-form-label">Name of your FlavorDash restaurant:</label>
-        <div class="col-sm-9">
-            <input type="text" name="name" class="form-control">
+    <h3 class="text-center mb-3 mt-3">Register your restaurant!</h3>
+    <div class="container">
+        <div class="row mb-0">
+            <label for="name" class="col-sm-3 col-form-label">Name of your FlavorDash restaurant:</label>
+            <div class="col-sm-9">
+                <input type="text" name="name" class="form-control" required>
+            </div>
         </div>
     </div>
 
-    <div class="food-form">
-        <h3>Food:</h3>
-        <div class="row mb-0">
-            <label for="food-name" class="col-sm-2 col-form-label">Name for food:</label>
-            <div class="col-sm-10">
-                <input type="text" name="food-name" class="form-control">
+    <div class="food-form container">
+        <h3 class="text-center mb-3 mt-3">Food:</h3>
+        <div class="row mb-1">
+            <label for="food-name" class="col-sm-4 col-form-label">Name of food:</label>
+            <div class="col-sm-8">
+                <input type="text" name="food-name" class="form-control" required>
             </div>
         </div>
-        <div class="row mb-0">
-            <label for="food-price" class="col-sm-2 col-form-label">Price:</label>
-            <div class="col-sm-10">
-                <input type="text" name="food-price" class="form-control">
+
+        <div class="row mb-1">
+            <label for="food-price" class="col-sm-4 col-form-label">Price:</label>
+            <div class="col-sm-8">
+                <input type="text" name="food-price" class="form-control" required>
             </div>
         </div>
-        <div class="row mb-0">
-            <label for="food-ingredients" class="form-label">Ingredients: (seperated by commas)</label>
-            <textarea class="form-control" name="food-ingredients"></textarea>
+
+        <div class="row mb-1">
+            <label for="food-ingredients" class="col-sm-4 col-form-label">Ingredients:</label>
+            <div class="col-sm-8">
+                <textarea class="form-control" name="food-ingredients" placeholder="Separated by commas"></textarea>
+            </div>
         </div>
-        <div class="row mb-0">
-            <label for="food-description" class="form-label">Description</label>
-            <textarea class="form-control" name="food-description"></textarea>
+
+        <div class="row mb-1">
+            <label for="food-description" class="col-sm-4 col-form-label">Description</label>
+            <div class="col-sm-8">
+                <textarea class="form-control" name="food-description"></textarea>
+            </div>
         </div>
     </div>
     <button class="btn btn-outline-primary">Submit</button>
-    {{!-- <button class="add-food" type="button">Add Food</button> --}}
 </form>

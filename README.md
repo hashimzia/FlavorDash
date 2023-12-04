@@ -1,4 +1,5 @@
 # FlavorDash
+
 ## Milestone 3 Progress notes:
 Incorporated bootstrap + Sass compilaion into my project. 
 Added the new form and improved the layout slightly
@@ -92,16 +93,17 @@ An Example Restaurant with Embedded Food Items:
 ## Research Topics
 Research topics are currently very tentative and most of these will probably change by the next milestone
 
-*  (5 points) User Authentication using Passport
-  in-progress
+*  (3 points) User Authentication using Passport
+    * Hashes and salts
+*   (2 points) Flash messages
+    * Flash messages using connect-flash
 *  (3 points) Configuration management
-    *dotenv
+    * dotenv
 *  (2 points) CSS Preprocessor
     * Sass
 *  (2 points) Front-end Libraries
-        * Bootstrap
-           Configured a theme + used many of the components provided by bootstrap to style with SASS
-* (1 point) ESLint formatter integrated with vs code, formats on save;
+    * Bootstrap - Configured a theme + used many of the components provided by bootstrap to style with SASS
+*  (1 point) ESLint formatter integrated with vs code, formats on save;
 
 
 ## [Link to Initial Main Project File](app.mjs) 

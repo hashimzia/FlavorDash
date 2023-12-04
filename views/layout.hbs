@@ -10,11 +10,28 @@
 </head>
 
 <body>
+    {{#each messages.error}}
+    <div class="flash-message alert alert-danger" role="alert">
+        {{this}}
+        <button class="close-button" onclick="this.parentElement.style.display='none';">&times;</button>
+    </div>
+    {{/each}}
+
+    {{#each messages.success}}
+    <div class="flash-message alert alert-success" role="alert">
+        {{this}}
+        <button class="close-button" onclick="this.parentElement.style.display='none';">&times;</button>
+    </div>
+    {{/each}}
+
     <nav class="navbar navbar-light bg-primary">
         <div class="container justify-content-between">
             <a href="#"><img src="logo.png" alt="logo" class="img-thumbnail" width="100">
                 FlavorDash
             </a>
+            {{#if user}}
+            <span class="navbar-username">Welcome, {{user.username}}</span>
+            {{/if}}
 
             <ul class="mr-2">
                 <li><a href="/">Home</a></li>

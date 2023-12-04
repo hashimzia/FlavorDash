@@ -1,19 +1,38 @@
-<h1>
-    All restaurants show up here:
-</h1>
+<form action="/restaurants">
+
+    <div class="container">
+        <div class="row mb-0 mt-3">
+            <label for="name" class="col-sm-3 col-form-label">Search by name:</label>
+            <div class="col-sm-3">
+                <input type="text" name="name" class="form-control" required>
+            </div>
+            <button class="btn btn-primary col-sm-1">search</button>
+        </div>
+    </div>
+</form>
+
 {{#each restaurants}}
-<div class="restaurant container">
+<div class="restaurant container mt-3 border rounded border-primary">
     <h3>{{name}}</h3>
     <h4>Food available:</h4>
     {{#each food}}
-    <div class="food container-fluid">
+    <div class="food container-fluid col-sm-3 border border-primary rounded">
         <h4>{{name}}</h4>
         <p>Price:{{price}}</p>
+        <p>Ingredients: </p>
+        <div class="ingredients mb-3">
+            {{#each ingredients}}
+            <div class="ingredient-tag">
+                <p>{{this}}</p>
+            </div>
+            {{/each}}
+        </div>
+        <p>Description: </p>
         <p>{{description}}</p>
     </div>
     {{/each}}
     <div class="container">
-        <button type="submit" class="btn btn-danger delete-btn" id="{{_id}}">Delete</button>
+        <button type="submit" class="btn btn-danger delete-btn mb-3 mt-3" id="{{_id}}">Delete</button>
     </div>
 </div>
 {{/each}}

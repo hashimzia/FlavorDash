@@ -1,10 +1,22 @@
 <div class="row h-100">
+    {{#if user}}
+
+
+    <div class="col-sm-12 text-center justify-content-center align-items-center d-flex h-100 flex-column">
+        <h1>Welcome to the best food delivery app</h1>
+        <div class="btn-div">
+            <a href="/restaurants" class="btn btn-primary">Order Food</a>
+            <a href="/restaurants-add" class="btn btn-primary">Register your restaurant</a>
+        </div>
+    </div>
+    {{else}}
+
     <div class="col-sm-8 text-center justify-content-center align-items-center d-flex h-100">
         <h1>Welcome to the best food delivery app</h1>
         {{!-- <h4>You should be logged in to access any other features of the app</h4> --}}
     </div>
     <div class="col-sm-4 d-flex justify-content-center align-items-center flex-column">
-        <form action="">
+        <form action="/login" method="POST">
             <div class="form-group">
                 <label for="username">Username:</label>
                 <input type="text" name="username" class="form-control">
@@ -13,9 +25,13 @@
                 <label for="password">Password:</label>
                 <input type="password" name="password" class="form-control">
             </div>
-            <button type="submit" class="btn btn-primary mb-4">Log In</button>
+            <button id="log-in" type="submit" class="btn btn-primary mb-4">Log In</button>
             <p>Dont have an account with us?</p>
-            <a href="">Sign Up</a>
+            <a href="/register">Sign Up</a>
         </form>
     </div>
+
+    {{/if}}
+
 </div>
+<script src="home.js"></script>

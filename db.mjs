@@ -1,6 +1,7 @@
 
 import './config.mjs';
 import mongoose from "mongoose";
+import passportLocalMongoose from 'passport-local-mongoose';
 
 if (!process.env.MONGODB_URI) {
     throw console.error("No Mongo DB");
@@ -9,13 +10,12 @@ if (!process.env.MONGODB_URI) {
 mongoose.connect(process.env.MONGODB_URI);
 
 
-const User = new mongoose.Schema({
-    name: String,
+const UserSchema = new mongoose.Schema({
+    username: String,
     hash: String,
-    ownerBool: Boolean,
-    owner: { type: mongoose.Schema.Types.ObjectId, ref: 'Restaurant' }
-});
 
+});
+UserSchema.plugin(passportLocalMongoose);
 const Restaurant = new mongoose.Schema({
     name: String,
     food: [{
@@ -23,9 +23,11 @@ const Restaurant = new mongoose.Schema({
         price: Number,
         ingredients: Array,
         description: String,
-    }]
+    }],
+    owner: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+    ownerBool: Boolean
 
 });
 
-mongoose.model("User", User);
+mongoose.model("User", UserSchema);
 mongoose.model("Restaurant", Restaurant);
