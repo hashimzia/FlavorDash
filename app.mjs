@@ -8,7 +8,13 @@ import { fileURLToPath } from 'url';
 import passport from 'passport';
 import session from 'express-session';
 import flash from 'connect-flash';
+import MongoDBStore from 'connect-mongodb-session';
 
+const store = new (MongoDBStore(session))({
+    uri: process.env.MONGODB_URI, // Replace with your MongoDB Atlas URI
+    collection: 'sessions', // Name of the collection to store sessions
+    expires: 1000 * 60 * 60 * 24 * 7, // Session expiration time (7 days)
+});
 
 const User = mongoose.model("User");
 const Restaurant = mongoose.model('Restaurant');
@@ -20,7 +26,8 @@ const __dirname = path.dirname(__filename);
 const sessionOptions = {
     secret: 'secret cookie thang (store this elsewhere!)',
     resave: true,
-    saveUninitialized: true
+    saveUninitialized: true,
+    store: store
 };
 app.use(session(sessionOptions));
 app.use(passport.initialize());
@@ -104,7 +111,13 @@ app.post('/login', function (req, res, next) {
         }
     })(req, res, next);
 });
-
+app.get('/logout', (req, res) => {
+    req.logout(function (err) {
+        if (err) { return next(err); }
+        req.flash('success', 'Logout successful');
+        res.redirect('/');
+    });
+});
 app.post('/restaurants-add', (req, res) => {
 
     const sampleRestaurant = new Restaurant({

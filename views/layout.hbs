@@ -30,13 +30,19 @@
                 FlavorDash
             </a>
             {{#if user}}
-            <span class="navbar-username">Welcome, {{user.username}}</span>
+            <div>
+                <span class="navbar-username"> Welcome, {{user.username}}</span>
+
+            </div>
             {{/if}}
 
             <ul class="mr-2">
                 <li><a href="/">Home</a></li>
                 <li><a href="/restaurants-add">Add a restaurant</a></li>
                 <li><a href="/restaurants">Order</a></li>
+                {{#if user}}
+                <li><a href="/logout">Logout</a></li>
+                {{/if}}
             </ul>
         </div>
     </nav>

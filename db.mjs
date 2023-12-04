@@ -3,6 +3,7 @@ import './config.mjs';
 import mongoose from "mongoose";
 import passportLocalMongoose from 'passport-local-mongoose';
 
+
 if (!process.env.MONGODB_URI) {
     throw console.error("No Mongo DB");
 }
