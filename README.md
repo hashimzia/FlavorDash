@@ -1,4 +1,5 @@
 # FlavorDash
+LINK = https://flavor-dash.vercel.app/
 
 ## Milestone 3 Progress notes:
 Incorporated bootstrap + Sass compilaion into my project. 
